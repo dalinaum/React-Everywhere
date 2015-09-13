@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Counter State!</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/babel-core/browser.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var Counter = React.createClass({
+        getInitialState: function() {
+          return { number: this.props.number };
+        },
+        handleClick: function() {
+          this.setState({ number: this.state.number + 1 });
+        },
+        render: function() {
+          return (
+            <p onClick={this.handleClick}>
+              DEVIEW, {this.state.number}!
+            </p>
+          );
+        }
+      });
+      React.render(
+        <Counter number={2015} />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

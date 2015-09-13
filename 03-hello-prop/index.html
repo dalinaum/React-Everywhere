@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello Prop!</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/babel-core/browser.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var HelloClass = React.createClass({
+        render: function() {
+          return (
+            <h1>Hello, {this.props.someone}!</h1>
+          );
+        }
+      });
+      React.render(
+        <HelloClass someone="prop"/>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
